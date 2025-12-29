@@ -1,0 +1,821 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'assets/logo.png' %}" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            
+            <div class="nav-left">
+            <a href="#home" class="logo-container">
+                <img src="{% static 'assets/logo.png' %}"alt="Logo" class="site-logo">
+                <span class="company-name">Grid Design</span>
+            </a>
+        </div>
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="#home">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-home"></i></div>
+                            <div class="nav-name">Home</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-user"></i></div>
+                            <div class="nav-name">About</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#services">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="nav-name">Services</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="nav-name">Portfolio</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-address-book"></i></div>
+                            <div class="nav-name">Contact Us</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-auth">
+                    <a href="#" id="loginBtn">
+                        <div class="nav-item">
+                            <div class="nav-icon"><i class="fas fa-sign-in"></i></div>
+                            <div class="nav-name">Login</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-user" style="display:none;">
+                    <div class="user-menu">
+                        <a href="#" id="userProfile">
+                            <div class="nav-item">
+                                
+                                <div class="nav-icon"><i class="fas fa-user-circle"></i></div>
+                                <div class="nav-name">Welcome, <span id="userName">User</span></div>
+                            </div>
+                        </a>
+                        <div class="user-dropdown" id="userDropdown">
+                            
+                            <a href="#" id="myOpinions" style="display: none;">
+                                <div class="nav-item">
+                                    <div class="nav-icon"><i class="fas fa-comment"></i></div>
+                                    <div class="nav-name">My Opinions</div>
+                                </div>
+                            </a>
+                       
+                            <a href="#" id="logout">
+                                <div class="nav-item">
+                                    <div class="nav-icon"><i class="fas fa-sign-out"></i></div>
+                                    <div class="nav-name">Logout</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        <!-- ==================== THEME TOGGLE ==================== -->
+<div class="theme-container">
+    <button class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
+        <div class="toggle-icons">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+        </div>
+    </button>
+</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<!-- ==================== FLOATING CONTACT ==================== -->
+<div class="floating-contact-btn" id="floatingContactBtn">
+    <i class="fas fa-envelope"></i>
+    <span class="tooltip">Contact Me</span>
+</div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="{% static 'assets/bg image/bg6.png' %}" alt="" >
+        </div>
+        <div class="hero-content">
+            <h1>Creative Designer &amp; Art Director</h1>
+            <div class="tagline" id="tagline">
+                <span id="taglineText">Bringing ideas to life through design</span>
+            </div>
+            <!-- Animated Taglines -->
+            <div class="tagline-container">
+                <div class="tagline-5 visible" id="animatedTagline">
+                    <div class="line"><span class="highlight">Design</span> that speaks.</div>
+                    <div class="line"><span class="highlight">Brands</span> that stay.</div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Work</a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator"><a href="#about"><i class="fas fa-chevron-down"></i></a></div>
+    </section>
+
+<!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- <img src="https://plus.unsplash.com/premium_vector-1710425434883-777491e24a16?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=352&dpr=2&h=367" alt="Designer Profile"> -->
+                    <img src="{% static 'assets/about.png' %}" alt="">
+                </div>
+                <div class="about-text">
+                    <p>We are a creative design studio focused on building brands with clarity, confidence, and style. Our approach is minimal, intentional, and rooted in understanding the core of your identity.</p>
+                    <p>Every design we create has a purpose: to communicate, to inspire, and to leave a lasting impression. From branding and logos to posters, web design, packaging, illustrations, brochures, and video content, we shape visuals that feel modern, meaningful, and aligned with your story. </p>
+                    <p>We combine strategy with creativity, ensuring that every element is thoughtfully crafted and visually striking.We work with leading industry tools including:</p>
+                    <div class="skills">
+                        <div class="skill-tag">Photoshop</div>
+                        <div class="skill-tag">Illustrator</div>
+                        <div class="skill-tag">InDesign</div>
+                        <div class="skill-tag">After Effects</div>
+                        <div class="skill-tag"> XD</div>
+                        <div class="skill-tag">DaVinci Resolve</div>
+                        <div class="skill-tag"> Figma</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services & Specialties</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Poster design</h3>
+                    <p>Crafting impactful poster designs that grab attention and drive engagement. We blend creativity with strategic messaging to make your brand stand out.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stamp"></i>
+                    </div>
+                    <h3>Branding & Identity Design</h3>
+                    <p>Creating memorable brand identities that resonate with your target audience and stand the test of time. From logos to complete brand guidelines, we craft cohesive visual identities that tell your story.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing  & Promotional Design</h3>
+                    <p>Strategic designs that amplify your marketing campaigns and drive results. From social media graphics to promotional materials, we create visuals that capture attention and convert audiences into customers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>UI/UX & Digital Design</h3>
+                    <p>Designing intuitive and engaging digital experiences that delight users. We create seamless interfaces that blend beautiful aesthetics with exceptional usability across web and mobile platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video & Motion Graphics</h3>
+                    <p>Bringing your stories to life through dynamic video content and captivating motion graphics. From animations to promotional videos, we create visual experiences that engage, inform, and inspire action.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Illustration & Creative Art</h3>
+                    <p>Crafting unique illustrations and custom artwork that bring imagination to life. From digital illustrations to hand-drawn art, we create visuals that tell your story with originality, creativity, and style.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Product & Advertising Design</h3>
+                    <p>Creating compelling product designs and advertising campaigns that drive sales and build brand loyalty. From eye-catching packaging to persuasive ads, we make your products stand out in the marketplace.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Print & Publication Design</h3>
+                    <p>Designing professional print materials that leave a lasting impression. From brochures and magazines to catalogs and annual reports, we create stunning publications that engage readers and communicate effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO ==================== -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-title"><h2>Projects</h2></div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="banner design">Banner Design</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="logo">LOGO</button>
+            <button class="filter-btn" data-filter="posters">Posters</button>
+            <button class="filter-btn" data-filter="thumbnail">Thumbnail</button>
+            <button class="filter-btn" data-filter="ui-ux">UI&UX</button>
+            <button class="filter-btn" data-filter="visiting card">Visiting Card</button>
+        </div>
+
+        <div class="portfolio-grid" id="projectsGrid">
+                {% for project in projects %}
+                <div class="project-card " data-category="{{project.category}}" data-project-id="{{project.id}}">
+
+
+                    <div class="project-main-content">
+                        <div class="project-image">
+                            {% if project.main_image %}
+                            <img src="{{project.main_image.url}}" alt="{{project.title}}" class="zoomable">
+                            {% endif %}
+                        </div>
+                    <div class="project-info">
+                        <h3>{{project.title}}</h3>
+                        <div class="project-locked"><p>Share opinion to unlock</p><button class="open-opinion btn btn-primary share-opinion-btn" data-project-id="{{project.id}}" >Share Opinion</button></div>
+
+                        <div class="project-collapsed">
+                            <p> {{project.description}} </p>
+                            <div class="project-toggle-buttons">
+                                <button class="toggle-btn expand-btn"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hidden Content for Modal -->
+                <div class="project-expanded">
+                    <h3>{{project.title}}</h3>
+                    <p>{{project.paragraph}}</p>
+                    <p><strong>{{project.bullet_head}} </strong></p>
+                    <ul>
+                        {% if project.bullets.all %}
+                            {% for bullet in project.bullets.all  %}
+                            <li>{{bullet.text}}</li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                    <div class="project-gallery">
+                        {% if project.images.all %}
+                            {% for image_obj in project.images.all %}
+                                <img src="{{image_obj.image.url}}" alt="{{project.title}}">
+                            {% endfor %}
+                        {% endif %}
+                        <p>{{project.paragraph}}
+                        <p id="pmFinalQuote" class="final-quote-data" style="font-weight: 600;margin-bottom: 0.5rem;color: var(--text-primary);">{{project.final_quote}}</p></p>
+                        <div class="project-toggle-buttons"><button class="toggle-btn collapse-btn"><i class="fas fa-chevron-up"></i></button></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="projects-control">
+            <button class="btn-control view-all-btn" id="viewAllBtn">
+                <span>View All Projects</span>
+            </button>
+            <button class="btn-control close-all-btn hidden" id="closeAllBtn">
+                <span>Close All Projects</span>
+            </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="2+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <!-- <div class="stat-card">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Case Study -->
+    <section class="case-study">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who We Are / Why We Design</h2>
+            </div>
+            <div class="case-study-content">
+                <div class="case-study-section">
+                    <div class="case-study-image">
+                        <img src="{% static 'assets/designer/Screenshot 2025-11-14 201235.png' %}" alt="Case Study 1">
+                    </div>
+                    <div class="case-study-text">
+                        <p>We design because we believe visuals have the power to communicate more than words alone. From the beginning, we’ve been drawn to understanding how a design works.</p>
+                        <p>how colors, typography, layout, and style come together to create meaning. That curiosity is what shaped our passion and continues to guide our work.</p>
+                    </div>
+                </div>
+                <div class="case-study-section">
+                    <div class="case-study-image">
+                        <img src="{% static 'assets/designer/cropped-Image_2.png' %}" alt="Case Study 2">
+                    </div>
+                    <div class="case-study-text">
+                        <p>Over time, we developed a strong attention to detail. We notice the subtle things that influence how a design feels and how it connects with people.</p>
+                        <p> A small shift in color, spacing, or texture can change the entire tone, and we love exploring those possibilities.</p>
+                    </div>
+                </div>
+                <div class="case-study-section">
+                    <div class="case-study-image">
+                        <img src="{% static 'assets/designer/cropped-Image_3.png' %}" alt="Case Study 3">
+                    </div>
+                    <div class="case-study-text">
+                        <p>For us, design is purposeful. Every element in our work is chosen intentionally to tell a story or deliver a message clearly. </p>
+                        <p> It’s not just about making something look good. It’s about making it meaningful, memorable, and aligned with the identity it represents.</p>
+                    </div>
+                </div>
+                <div class="case-study-section">
+                    <div class="case-study-image">
+                        <img src="{% static 'assets/designer/cropped-Image_4.png' %}" alt="Case Study 4">
+                    </div>
+                    <div class="case-study-text">
+                        <p>This mindset is at the core of our studio. We continue to learn, experiment, and evolve with every project.</p>
+                        <p>Design isn’t only a service we provide. It’s the language we use to create value and expression for brands and ideas.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ==================== CONTACT MODAL ==================== -->
+<div class="modal contact-modal" id="contactModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Contact Us</h3>
+            <button class="modal-close" id="closeContactModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="contact-form">
+                <form id="contactForm" action="{% url 'send_contact' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" class="form-control" name="product_type" required>
+                            <option value="">Select a project type</option>
+                            <option value="branding">Branding</option>
+                            <option value="Banner design">Banner Design</option>
+                            <option value="LOGO">Logo</option>
+                            <option value="posters">Poster Design</option>
+                            <option value="Thumbnail">Thumbnail</option>
+                            <option value="UI&UX">UI&UX</option>
+                            <option value="Visiting Card">Visiting card</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Design Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Design Process</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="step-title">Research</h3>
+                    <p>Understanding the problem, audience, and market context</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="step-title">Ideate</h3>
+                    <p>Brainstorming concepts and exploring creative directions</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="step-title">Design</h3>
+                    <p>Creating visual solutions and refining the details</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="step-title">Test</h3>
+                    <p>Gathering feedback and iterating based on insights</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="step-title">Deliver</h3>
+                    <p>Finalizing assets and ensuring successful implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            
+            <div class="testimonials-carousel">
+                {% for testimonial in testimonials %}
+                <div class="testimonial-item {% if forloop.first %}active{% endif %}">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= testimonial.rating %}
+                                    <i class="fas fa-star"></i>
+                                {% else %}
+                                    <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="testimonial-text">
+                            "{{ testimonial.content }}"
+                        </div>
+                        <div class="client-info">
+                            <div class="client-image">
+                                {% if testimonial.image %}
+                                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
+                                {% else %}
+                                    <div class="default-avatar">{{ testimonial.name|first|upper }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="client-details">
+                                <h4>{{ testimonial.name }}</h4>
+                                <p>{{ testimonial.position }}, {{ testimonial.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    {% for testimonial in testimonials %}
+                        <span class="dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.counter0 }}"></span>
+                    {% endfor %}
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    
+
+       <!-- Tools & Technologies -->
+<section class="tools">
+    <div class="container">
+        <div class="section-title">
+            <h2>Tools & Technologies</h2>
+        </div>
+        <div class="tools-wrap">
+            <div class="tools-track">
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/figma-svgrepo-com.svg' %}" alt="Figma" />
+                    <p>Figma</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/icons8-davinci-resolve.svg' %}" alt="DaVinci Resolve" />
+                    <p>DaVinci Resolve</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/after-effects-cc-logo-svgrepo-com.svg' %}" alt="After Effects" />
+                    <p>After Effects</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/indesign-cc-logo-svgrepo-com.svg' %}" alt="InDesign" />
+                    <p>InDesign</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/adobe-xd-logo-svgrepo-com.svg' %}" alt="Adobe XD" />
+                    <p>XD</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/adobe-illustrator-cc-logo-svgrepo-com.svg' %}" alt="Illustrator" />
+                    <p>Illustrator</p>
+                </div>
+                <div class="tool-logo">
+                    <img src="{% static 'assets/icon/photoshop-cc-logo-svgrepo-com.svg' %}" alt="Photoshop" />
+                    <p>Photoshop</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Work Together</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p>contact.griddezign@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p>(+91) 93440 36934</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="lightbox" id="lightbox">
+  <!-- Close button (top-right corner) -->
+  <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+
+  <!-- Navigation arrows -->
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+
+  <!-- Zoom controls -->
+  <div class="lightbox-controls">
+    <button class="lightbox-btn" id="zoomIn"><i class="fas fa-search-plus"></i></button>
+    <button class="lightbox-btn" id="zoomOut"><i class="fas fa-search-minus"></i></button>
+    <button class="lightbox-btn" id="zoomReset"><i class="fas fa-expand-arrows-alt"></i></button>
+  </div>
+</div>
+
+
+<!-- Opinion Modal -->
+<div class="modal" id="opinionModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Share Your Opinion</h3>
+            <button class="modal-close" id="closeOpinionModal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form id="opinionForm" class="opinion-form" action="/save_opinion/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" id="project_id" name="project_id" value="{{ project.id }}">
+                <input type="hidden" id="rating" name="rating" value="0">
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <span class="star" data-value="1"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="2"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="3"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="4"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="5"><i class="fas fa-star"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="opinionText">Your Opinion</label>
+                    <textarea id="opinionText" class="form-control" placeholder="Share your thoughts..." minlength="15" name="opinion_message" required></textarea>
+                    <div class="character-counter"><span id="charCount">0</span>/500</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Opinion</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== AUTHENTICATION MODAL ==================== -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-overlay"></div>
+        <div class="auth-modal-content">
+            <!-- Close button for the modal -->
+            <button class="auth-modal-close" id="closeAuthModal">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Tab Navigation -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab">Sign In</button>
+                <button class="auth-tab" id="signupTab">Sign Up</button>
+            </div>
+
+            <!-- Sign In Form -->
+            <div class="auth-form-container active-form" id="loginFormContainer">
+                <form id="loginForm" action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <h2>Welcome Back</h2>
+                    <div class="form-group">
+                        <label for="loginIdentifier">Username or Email</label>
+                        <input type="text" id="loginIdentifier" name="loginIdentifier" required>
+                        <div class="field-message" id="loginIdentifierMsg"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                        <div class="field-message" id="loginPasswordMsg"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" id="loginSubmitBtn">Sign In</button>
+                    <p class="auth-switch">
+                        Don't have an account? <a href="#" id="switchToSignup">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+<div class="auth-form-container" id="signupFormContainer">
+    <form id="signupForm" action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <h2>Creating</h2>
+        <!-- Row 1: Name and Username -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="signupName">Name</label>
+                <input type="text" id="signupName" name="signupName" required>
+                <div class="field-message" id="signupNameMsg"></div>
+            </div>
+            <div class="form-group">
+                <label for="signupUsername">Username</label>
+                <input type="text" id="signupUsername" name="signupUsername" required>
+                <small>Username must be unique.</small>
+                <div class="field-message" id="signupUsernameMsg"></div>
+            </div>
+        </div>
+
+        <!-- Row 2: Email (full width) -->
+        <div class="form-group">
+            <label for="signupEmail">Email ID</label>
+            <input type="email" id="signupEmail" name="signupEmail" required>
+            <div class="field-message" id="signupEmailMsg"></div>
+        </div>
+
+        <!-- Row 3: Passwords -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="signupPassword">Create Password</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+                <div class="field-message" id="signupPasswordMsg"></div>
+                <div class="password-strength" id="passwordStrength">
+                    <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                </div>
+                <div class="password-strength-text" id="passwordStrengthText"></div>
+            </div>
+            <div class="form-group">
+                <label for="signupConfirmPassword">Confirm Password</label>
+                <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+                <div class="field-message" id="signupConfirmPasswordMsg"></div>
+            </div>
+        </div>
+
+        <!-- Row 4: Buttons -->
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="signupSubmitBtn">Sign Up</button>
+            </div>
+        
+        <p class="auth-switch">
+            Already have an account? <a href="#" id="switchToLogin">Sign In</a>
+        </p>
+    </form>
+</div>
+            <!-- Message Display Area -->
+            <div class="auth-message" id="authMessage"></div>
+        </div>
+    </div>
+
+<!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/grid-dezign/" target="_blank" rel="noopener noreferrer" class="social-link" data-name="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/griddezign/" target="_blank" rel="noopener noreferrer" class="social-link" data-name="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" data-name="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" data-name="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Grid Designs website. All rights reserved.</p>
+    </footer>
+
+        <!-- Full Project Modal -->
+    <!-- Project Modal -->
+    <div class="modal project-modal" id="projectModal">
+        <div class="modal-content project-modal-content">
+            <button class="modal-close project-modal-close" id="closeProjectModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-modal-body">
+                <div class="project-modal-left">
+                    <div class="project-modal-main-image">
+                        <img id="pmMainImage" src="" alt="Project Cover">
+                    </div>
+                    <div class="project-modal-gallery" id="pmGallery"></div>
+                </div>
+                <div class="project-modal-right">
+                    <div class="pm-header">
+                        <span class="pm-category" id="pmCategory">Category</span>
+                        <h2 class="pm-title" id="pmTitle">Project Title</h2>
+                    </div>
+                    <div class="pm-description">
+                        <p id="pmShortDesc" class="pm-short-desc"></p>
+                        <div id="pmFullDesc" class="pm-full-desc"></div>
+                         <p id="pmFinalQuote" class="pm-final-quote"></p>
+                    </div>
+                    <div class="pm-tech-stack">
+                        <!-- <h3>Tools & Technologies</h3> -->
+                        <div class="pm-tags" id="pmTags"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const SEND_CONTACT_URL = "{% url 'send_contact' %}";
+        const SAVE_OPINION_URL = "{% url 'save_opinion' %}";
+        const LOGIN_URL = "{% url 'login' %}";
+        const SIGNUP_URL = "{% url 'signup' %}";
+        const LOGOUT_URL = "{% url 'logout' %}";
+        const userAuthenticated = "{% url 'user' %}";
+    
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
