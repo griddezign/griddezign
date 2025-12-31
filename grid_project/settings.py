@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jzc%y6gld396#5q*!fr=*%7_xo+)5$)h334b_@7!c8ypz_6b7b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["https://griddezign-owlcwxol.onslate.in"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -149,6 +149,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "contact.griddezign@gmail.com"
 EMAIL_HOST_PASSWORD = ""
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 
